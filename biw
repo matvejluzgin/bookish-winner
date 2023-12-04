@@ -1,0 +1,27 @@
+    
+    @State private var animate = false
+    
+    var body: some View {
+        ZStack {
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            ShapesWithAnimateableData(cornerRadius: animate ? 60 : 0)
+                .frame(width: 200, height: 200)
+        }
+        .onAppear {
+            withAnimation(.linear(duration: 2).repeatForever()) {
+            animate.toggle()
+            }
+            
+        }
+
+    }
+}
+
+
+
+struct UsingShapesWithAnimateableDataView_Previews: PreviewProvider {
+    static var previews: some View {
+        UsingShapesWithAnimateableDataView()
+    }
+}
+
